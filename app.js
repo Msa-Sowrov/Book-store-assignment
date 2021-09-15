@@ -26,7 +26,7 @@ document.getElementById('search-btn').addEventListener('click', () =>{
     <span class="visually-hidden">Loading...</span>
     </div>
     `
-    
+
     //clear search filed
     document.getElementById('search-filed').value = '';
 })
@@ -69,3 +69,13 @@ const showData = obj => {
     })
     );
 }
+
+//search by pressing Enter key only
+const inputValue = document.getElementById('search-filed');
+const searchBtn = document.getElementById('search-btn');
+
+inputValue.addEventListener('keypress', (event)=>{
+    if(event.key == "Enter"){
+        searchBtn.click();
+    }
+})
