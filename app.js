@@ -46,7 +46,10 @@ const showData = obj => {
     //condition if search result not found
     if(data.length === 0){
         console.log('not found')
+        document.getElementById('loding').textContent = '';
         result.innerText = '*result not found'
+
+        
     }
     else(
     data.forEach(data => {
