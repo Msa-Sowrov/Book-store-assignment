@@ -1,3 +1,12 @@
+//show initial book 
+function showInitialBook(){
+    const url = `https://openlibrary.org/search.json?q=programming`
+    fetch(url)
+    .then(res=>res.json())
+    .then(data => showData(data))
+
+}
+showInitialBook();
 document.getElementById('search-btn').addEventListener('click', () =>{
     const searchValue = document.getElementById('search-filed').value;
     
