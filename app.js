@@ -4,7 +4,11 @@ function showInitialBook(){
     fetch(url)
     .then(res=>res.json())
     .then(data => showData(data))
-
+    document.getElementById('loding').innerHTML = `
+    <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+    </div>
+    `
 }
 showInitialBook();
 document.getElementById('search-btn').addEventListener('click', () =>{
@@ -16,6 +20,13 @@ document.getElementById('search-btn').addEventListener('click', () =>{
     .then(res=>res.json())
     .then(data => showData(data))
 
+    document.getElementById('card-area').textContent = "";
+    document.getElementById('loding').innerHTML = `
+    <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+    </div>
+    `
+    
     //clear search filed
     document.getElementById('search-filed').value = '';
 })
@@ -54,6 +65,7 @@ const showData = obj => {
         </div>
             `
     section.appendChild(div)
+    document.getElementById('loding').textContent = '';
     })
     );
 }
